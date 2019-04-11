@@ -1,0 +1,52 @@
+﻿
+body {
+    background-color: rgba(116, 109, 146, 0.993);
+}
+
+ul { font-family: Arial, Helvetica, sans-serif;
+     font-size: 200
+}
+
+h1 {
+     color: rgb(12, 173, 167);
+     background-color: white;
+     font-family: times new roman;
+     font-weight: bold;
+}
+
+h3 {
+     color: rgb(12, 173, 167);
+     background-color: white;
+     font-family: times new roman;
+     font-weight: bold;
+}
+
+img {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+p {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 200
+}
+
+.container {
+  background-color: gray;
+}
+
+.navbar {
+         padding-left: 50px;
+}
+
+.navbar-brand {
+               background-color: rgb(12, 173, 167);
+               font-family: times new roman;
+               font-weight: bold;
+               color: white;
+
+#col {
+column-count: 2;
+ }
