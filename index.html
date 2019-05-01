@@ -1,67 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name ="viewport" content ="width=device-width", initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mission to Mars</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
-    <div class="container">
-
-        <div class="jumbotron text-center">
-          <h1>Mission to Mars</h1>
-          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">UFO Sightings
+            <img class="nav-ufo" src="static/images/ufo.svg">
+          </a>
         </div>
-    
-        <div class="row" id="mars-news">
-          <div class="col-md-12">
-              <h3>Latest Mars News</h3>
-                <h4>{{mars.mars_news}}</h4>
-                    <p>{{mars.mars_paragraph}}</p>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>UFO Sightings</h1>
+      <p>"Data that may lead to the Truth that is Out There"</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a Date</label>
+                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">DATE</th>
+                  <th class="table-head">CITY</th>
+                  <th class="table-head">STATE</th>
+                  <th class="table-head">COUNTRY</th>
+                  <th class="table-head">SHAPE</th>
+                  <th class="table-head">DURATION</th>
+                  <th class="table-head">COMMENTS</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
         </div>
-
-        <div class ="row" id="mars-image">
-            <div class = "col-md-8">
-                <h3>Featured Mars Image</h3>
-                <img src = "{{mars.mars_image}}" alt ="Mars Image">
-            </div>
-            <div class = "col-md-4">
-                    <h4>Current Weather on Mars</h4>
-                    <p>{{mars.mars_weather}}</p>
-                    <br>
-                    <h4>Mars Facts</h4>
-                    <p>{{mars.mars_facts | safe}}</p>
-                </div>
-        </div>
-        
-        <div class ="row" id="mars-hemispheres">
-            <div class = "col-md-12">
-                <h3><center>Mars Hemispheres</center></h3>
-
-                {% for hemisphere in mars.mars_hemisphere %}
-                    <div class = "col-md-6">
-                        <div class = "thumbnail">
-                            <img src = "{{hemisphere.img_url}}">
-                                <h3>{{hemisphere.title}}</h3>
-                            </div>
-                        </div>
-                {% endfor %}
-                    </div>
-
-            
-            </div>
-        </div>
-        </div>
-
-        </div>
-
-
-
       </div>
-</body>
+    </div>
+    <footer class="footer">
+      <span class="bottom">UFO Sightings</span>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+  </body>
+
 </html>
